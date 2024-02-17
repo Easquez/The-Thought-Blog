@@ -27,13 +27,11 @@ function LoginForm() {
 
   const submitForm = async (data) => {
     try {
-      console.log(data);
       const signInResponse = await signIn("credentials", {
         email: data.email,
         password: data.password,
         redirect: false,
       });
-      console.log(signInResponse);
       setIsLoading(true);
 
       if (signInResponse.ok) {
